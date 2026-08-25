@@ -311,7 +311,7 @@ This shows the options and examples available for that command.
 
 ## version.txt
 
-The `version.txt` file is located at the root of the project and is used by OrbitMVD to identify repository versions when creating tags and releases.
+The `version.txt` file is located at the root of the project and is used by Orbit MVS to identify repository versions when creating tags and releases.
 
 It must contain exactly three version numbers. The first two numbers can be used for any versioning scheme that fits the project. The third number is always used as the build number.
 
