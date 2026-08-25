@@ -1,0 +1,15 @@
+Usage: forge info [options]
+
+Description:
+    Displays information about the current project, including its directory,
+    packages, version and last build timestamp.
+
+Options:
+  --env, -E <VAR>           Add an environment variable
+  --define, -D <NAME=VAL>   Add a compile-time define
+  --project <dir>           Specify the workspace directory
+  --package, -p <dir>       Specify a standalone package directory
+
+Examples:
+  forge info
+  forge info --project ./myworkspace

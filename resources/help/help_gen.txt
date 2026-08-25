@@ -1,0 +1,21 @@
+Usage: forge gen [package] [options]
+
+Description:
+    Generates build files for the current package or workspace in the
+    specified format (Ninja, Makefile, shell script or batch file).
+
+Options:
+  --debug                   Use debug mode (default)
+  --preview                 Use preview mode
+  --release                 Use release mode
+  --env, -E <VAR>           Add an environment variable
+  --define, -D <NAME=VAL>   Add a compile-time define
+  --format, -f <value>      Output format: ninja, makefile, shell, batch (default: ninja)
+  --output, -o <path>       Specify the output file path
+  --project <dir>           Specify the workspace directory
+  --package, -p <dir>       Specify a standalone package directory
+
+Examples:
+  forge gen --format makefile
+  forge gen --release --output ./build/build.ninja
+  forge gen --project ./myworkspace --format shell

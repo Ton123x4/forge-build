@@ -1,0 +1,21 @@
+Usage: forge-link [command] [options]
+
+Description:
+    Manages prebuilt modules for Forge projects. Modules are installed into
+    the configured modules directory and referenced by identifier in forge
+    manifest files.
+
+Commands:
+  <id> <path>               Link a module from a local directory
+  remove <id>               Remove an installed module
+  list                      List all installed modules
+
+Options:
+  --version, -v             Print version information
+  --help, -h                Print this help message
+
+Examples:
+  forge-link MyLibrary ./MyLibrary/
+  forge-link MyLibrary /absolute/path/to/MyLibrary
+  forge-link remove MyLibrary
+  forge-link list

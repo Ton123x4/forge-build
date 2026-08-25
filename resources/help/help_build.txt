@@ -1,0 +1,29 @@
+Usage: forge build [package] [options]
+
+Description:
+    Builds the current package or workspace, compiling all sources and linking
+    the final output. Version is automatically incremented on release and
+    preview builds, which also triggers a full rebuild since the version is
+    embedded in every package.
+
+Options:
+  --increment, -i           Allow automatic version increment (default)
+  --no-increment, -ni       Prevent automatic version increment
+  --debug                   Build in debug mode (default)
+  --preview                 Build in preview mode
+  --release                 Build in release mode
+  --rebuild, -r             Force full rebuild
+  --no-rebuild, -nr         Prevent the automatic full rebuild triggered by increment
+  --env, -E <VAR>           Add an environment variable
+  --define, -D <NAME=VAL>   Add a compile-time define
+  --workers, -J <N>         Number of parallel build workers
+  --verbose, -v             Print detailed build output
+  --quiet, -q               Suppress build output
+  --project <dir>           Specify the workspace directory
+  --package, -p <dir>       Specify a standalone package directory
+
+Examples:
+  forge build --release --workers 8 --define DEBUG=1
+  forge build --project ./myworkspace --release --no-increment
+  forge build --release --no-rebuild
+  forge build --package ./mypackage

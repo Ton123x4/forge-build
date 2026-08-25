@@ -1,0 +1,20 @@
+Usage: forge test [package] [options]
+
+Description:
+    Runs the packages marked as tests in the project. A package must
+    already be built to be tested.
+
+Options:
+  --debug                   Run tests built in debug mode (default)
+  --preview                 Run tests built in preview mode
+  --release                 Run tests built in release mode
+  --env, -E <VAR>           Add an environment variable
+  --bare-env, -B            Start with an empty environment
+  --workers, -J <N>         Number of parallel test workers
+  --project <dir>           Specify the workspace directory
+  --package, -p <dir>       Specify a standalone package directory
+
+Examples:
+  forge test
+  forge test my_package
+  forge test --release --workers 4

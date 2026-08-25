@@ -1,0 +1,10 @@
+{
+    "packages": [
+        {
+            "id": "{package_id}",
+            "type": "executable",
+            "includes": [ "src" ],
+            "sources": [ "src" ]
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+Usage: forge copy [options]
+
+Description:
+    Copies the files and directories listed as resources in the project
+    to the output directory. Resources that don't exist are skipped
+    with a warning.
+
+Options:
+  --debug                   Copy to the debug output directory (default)
+  --preview                 Copy to the preview output directory
+  --release                 Copy to the release output directory
+  --env, -E <VAR>           Add an environment variable
+  --bare-env, -B            Start with an empty environment
+  --project <dir>           Specify the workspace directory
+  --package, -p <dir>       Specify a standalone package directory
+
+Examples:
+  forge copy
+  forge copy --release
+  forge copy --project ./myworkspace

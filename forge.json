@@ -1,0 +1,21 @@
+{
+    "storage": {
+        "compiler": {
+            "linux": "clang-19",
+            "default": "clang"
+        }
+    },
+    "packages": [
+        "packages/stdext",
+        "packages/forge-core",
+        "packages/forge-build",
+        "packages/forge-link"
+    ],
+    "resources": [
+        {
+            "from": "packages/stdext/include",
+            "to": "include"
+        },
+        "license.txt"
+    ]
+}

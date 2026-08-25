@@ -1,0 +1,19 @@
+{
+    "id": "forge-link",
+    "type": "executable",
+    "target": "bin/forge-link",
+    "defines": {
+        "windows": [ "_CRT_SECURE_NO_WARNINGS" ],
+        "default": []
+    },
+    "sources": [
+        "src"
+    ],
+    "flags": [
+        "-std=c++20",
+        "-Wno-c23-extensions"
+    ],
+    "requires": [
+        "stdext"
+    ]
+}

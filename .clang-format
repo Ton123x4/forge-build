@@ -1,0 +1,53 @@
+BasedOnStyle: Google
+BreakBeforeBraces: Custom
+
+BraceWrapping:
+  AfterFunction: false
+  AfterClass: false
+  AfterStruct: false
+  AfterEnum: false
+  AfterNamespace: false
+  AfterCaseLabel: true
+  BeforeElse: true
+  BeforeCatch: true
+  AfterControlStatement: MultiLine
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 0
+
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+BinPackArguments: true
+BinPackParameters: true
+
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignAfterOpenBracket: DontAlign
+
+Cpp11BracedListStyle: false
+SpacesInContainerLiterals: true
+SpaceInEmptyBlock: true
+SpaceBeforeParens: ControlStatements
+
+KeepEmptyLinesAtTheStartOfBlocks: true
+
+FixNamespaceComments: false
+CompactNamespaces: false
+NamespaceIndentation: All
+
+PenaltyBreakBeforeFirstCallParameter: 1000000
+PenaltyBreakOpenParenthesis: 1000000
+PenaltyBreakComment: 300
+PenaltyExcessCharacter: 1
+PenaltyIndentedWhitespace: 0
+
+SortIncludes: CaseSensitive
+IncludeBlocks: Regroup

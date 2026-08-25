@@ -1,0 +1,20 @@
+Usage: forge setup [package] [options]
+
+Description:
+    Generates a compile_commands.json for the current package or workspace,
+    for use with language servers and other tooling.
+
+Options:
+  --debug                   Use debug mode (default)
+  --preview                 Use preview mode
+  --release                 Use release mode
+  --env, -E <VAR>           Add an environment variable
+  --define, -D <NAME=VAL>   Add a compile-time define
+  --output, -o <path>       Specify the output file path (default: .forge/compile_commands.json)
+  --project <dir>           Specify the workspace directory
+  --package, -p <dir>       Specify a standalone package directory
+
+Examples:
+  forge setup
+  forge setup --output ./compile_commands.json
+  forge setup --project ./myworkspace --release

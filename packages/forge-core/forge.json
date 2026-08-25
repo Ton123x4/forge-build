@@ -1,0 +1,23 @@
+{
+    "id": "forge-core",
+    "type": "library",
+    "target": ".internal/forge-core",
+    "defines": {
+        "windows": [ "_CRT_SECURE_NO_WARNINGS" ],
+        "default": []
+    },
+    "includes": [
+        "include"
+    ],
+    "sources": [
+        "src"
+    ],
+    "flags": [
+        "-std=c++20",
+        "-Wall",
+        "-Wno-c23-extensions"
+    ],
+    "requires": [
+        "stdext"
+    ]
+}

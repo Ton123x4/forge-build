@@ -1,0 +1,32 @@
+{
+    "id": "stdext",
+    "type": "library",
+    "target": {
+        "windows": "lib/stdext",
+        "posix": "lib/libstdext"
+    },
+    "flags": {
+        "posix": [ "-fPIC" ],
+        "default": []
+    },
+    "cflags": [
+        "-std=c++20"
+    ],
+    "defines": {
+        "windows": [ "_CRT_SECURE_NO_WARNINGS" ],
+        "default": []
+    },
+    "includes": [
+        "include"
+    ],
+    "sources": [
+        "src"
+    ],
+    "copy-files": [
+        "include"
+    ],
+    "libraries": {
+        "windows": [ "Advapi32.lib", "ws2_32.lib" ],
+        "default": [ "stdc++" ]
+    }
+}

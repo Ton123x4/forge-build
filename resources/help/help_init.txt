@@ -1,0 +1,14 @@
+Usage: forge init [package] [options]
+
+Description:
+    Initializes a new forge project in the target directory, creating the
+    default source file, .gitignore, project config and version file.
+
+Options:
+  --project <dir>           Specify the workspace directory
+  --package, -p <dir>       Specify a standalone package directory
+
+Examples:
+  forge init
+  forge init my_package
+  forge init --project ./myworkspace

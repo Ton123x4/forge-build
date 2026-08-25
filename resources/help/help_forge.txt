@@ -1,0 +1,12 @@
+Commands:
+  forge init              Create a new Forge project
+  forge info              Print project information
+  forge gen               Generate build files (Ninja, Makefile, shell, batch)
+  forge setup             Generate a compilation database
+  forge build             Build a package or workspace
+  forge test              Run the packages marked as tests
+  forge copy              Copy resources to the output directory
+  forge clean             Remove build artifacts and cache
+
+  Use  forge <command> --help  for descriptions of available options and flags.
+  Use  forge --version  for Forge version information.
