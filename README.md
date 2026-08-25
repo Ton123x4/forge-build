@@ -4,7 +4,7 @@ Forge is a build tool for C and C++ projects. It uses a simple `forge.json` mani
 
 ### Documentation
 
-The [Forge Guide](GUIDE.md) covers the project structure, `forge.json` configuration, package types, environment-specific settings, external modules, resources, versioning, and build options.
+The [Forge Guide](docs/guide.md) covers the project structure, `forge.json` configuration, package types, environment-specific settings, external modules, resources, versioning, and build options.
 
 ### Building From Source
 
