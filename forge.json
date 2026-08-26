@@ -16,6 +16,6 @@
             "from": "packages/stdext/include",
             "to": "include"
         },
-        "license.txt"
+        "LICENSE.txt"
     ]
 }
