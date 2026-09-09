@@ -62,7 +62,7 @@ Forge also writes a `bootstrap.log` or build log to this directory while buildin
 | `sources`   | Lists the files and directories to compile. Paths are relative to the package directory.          |
 | `includes`  | Lists directories used when searching for header files.                                           |
 | `libpaths`  | Lists directories used when searching for libraries.                                              |
-| `libraries` | Lists libraries to link. Each library is passed to the linker with `-l`.                          |
+| `libraries` | Lists libraries to link. Existing files are passed directly, other values are passed as names with `-l`. |
 | `defines`   | Defines preprocessor macros for the package.                                                      |
 | `requires`  | Lists the packages that this package depends on. These can be local packages or external modules. |
 | `flags`     | Defines flags used during both compilation and linking or archive creation.                       |

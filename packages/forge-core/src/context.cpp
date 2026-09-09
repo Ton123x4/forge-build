@@ -145,13 +145,25 @@ namespace Build {
         }
     }
 
+    static void collectLibrariesFrom(const Project::StringArray& configured_libraries, const std::string& base_path, Project::StringArray& libraries) {
+        for (const auto& library : configured_libraries) {
+            auto relative_path = stdext::fs::join_path(base_path, library);
+            auto resolved_path = stdext::fs::is_absolute(library) ? library : relative_path;
+
+            if (stdext::fs::is_regular_file(resolved_path)) {
+                libraries.insert(stdext::fs::sanitize_posix(resolved_path));
+            }
+            else {
+                libraries.insert(std::format("-l {}", library));
+            }
+        }
+    }
+
     static void collectLibraries(const Project::Context& context, const std::string& package_id, Project::StringArray& libraries) {
         if (context.packages.contains(package_id)) {
             auto& package = context.packages.at(package_id);
 
-            for (const auto& library : package.libraries) {
-                libraries.insert(library);
-            }
+            collectLibrariesFrom(package.libraries, package.path, libraries);
 
             if (!isTransitive(package.type)) {
                 return;
@@ -167,9 +179,10 @@ namespace Build {
         if (context.dependencies.contains(package_id)) {
             auto& dependency = context.dependencies.at(package_id);
 
-            for (const auto& library : dependency.libraries) {
-                libraries.insert(library);
-            }
+            auto dependency_parent = dependency.parent.empty() ? package_id : dependency.parent;
+            auto dependency_home = Utils::GetDependencyDirectory(context, dependency_parent);
+
+            collectLibrariesFrom(dependency.libraries, dependency_home, libraries);
 
             for (const auto& dependency_id : dependency.dependencies) {
                 collectLibraries(context, dependency_id, libraries);
@@ -256,7 +269,7 @@ namespace Build {
         auto libraries = Project::StringArray();
 
         for (const auto& library : package.libraries) {
-            libraries.insert(library);
+            libraries.insert(std::format("-l {}", library));
         }
 
         for (const auto& dependency_id : package.dependencies) {
@@ -377,7 +390,7 @@ namespace Build {
         }
 
         for (const auto& library : getLibraries(context, project_package)) {
-            command_parts.push_back(std::format("-l {}", library));
+            command_parts.push_back(library);
         }
 
         auto command = Command(CommandType::Link);
