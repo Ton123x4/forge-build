@@ -1,5 +1,5 @@
 {
-    "id": "forge-build",
+    "name": "forge-build",
     "type": "executable",
     "target": "bin/forge",
     "defines": {

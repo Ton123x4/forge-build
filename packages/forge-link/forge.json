@@ -1,5 +1,5 @@
 {
-    "id": "forge-link",
+    "name": "forge-link",
     "type": "executable",
     "target": "bin/forge-link",
     "defines": {

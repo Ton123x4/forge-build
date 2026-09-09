@@ -228,14 +228,14 @@ namespace Project {
 
         auto dependency_config = Dependency();
 
-        dependency_config.id = parseRequiredString(context, dependency_node, "id");
+        dependency_config.name = parseRequiredString(context, dependency_node, "name");
         dependency_config.defines = parseStringArray(context, dependency_node, "defines");
         dependency_config.includes = parseStringArray(context, dependency_node, "includes");
         dependency_config.libpaths = parseStringArray(context, dependency_node, "libpaths");
         dependency_config.libraries = parseStringArray(context, dependency_node, "libraries");
         dependency_config.dependencies = parseStringArray(context, dependency_node, "requires");
 
-        context.project.dependencies.insert(dependency_config.id, dependency_config);
+        context.project.dependencies.insert(dependency_config.name, dependency_config);
     }
 
     auto parseDependenciesNode(InternalContext& context, stdext::json_node::safe_ptr& node) {
@@ -268,11 +268,11 @@ namespace Project {
             package_config.type = kPackageTypes.at(package_type);
         }
 
-        auto package_id = parseRequiredString(context, package_node, "id");
+        auto package_name = parseRequiredString(context, package_node, "name");
         auto package_target = parseOptionalString(context, package_node, "target");
         auto package_output = parseOptionalString(context, package_node, "output");
 
-        package_config.id = package_id;
+        package_config.name = package_name;
 
         if (!package_output.empty()) {
             package_config.output = package_output;
@@ -281,7 +281,7 @@ namespace Project {
             package_config.output = resolveOutputName(package_config.type, package_target);
         }
         else {
-            package_config.output = resolveOutputName(package_config.type, package_id);
+            package_config.output = resolveOutputName(package_config.type, package_name);
         }
 
         package_config.flags = parseStringArray(context, package_node, "flags");
@@ -294,7 +294,7 @@ namespace Project {
         package_config.libraries = parseStringArray(context, package_node, "libraries");
         package_config.dependencies = parseStringArray(context, package_node, "requires");
 
-        context.project.packages.insert(package_id, package_config);
+        context.project.packages.insert(package_name, package_config);
     }
 
     auto parsePackagesNode(InternalContext& context, stdext::json_node::safe_ptr& node) {

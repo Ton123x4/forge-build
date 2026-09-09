@@ -65,7 +65,7 @@ namespace Planner {
     }
 
     static void topologicalSort(SortContext& sort_context, DirtyPackages& sorted_packages, Candidates& visiting, Candidates& visited) {
-        visiting.insert(sort_context.project_package.id);
+        visiting.insert(sort_context.project_package.name);
 
         for (const auto& dependency_id : sort_context.project_package.dependencies) {
             if (!sort_context.project_context.packages.contains(dependency_id)) {
@@ -92,8 +92,8 @@ namespace Planner {
 
         sorted_packages.push_back(sort_context.current);
 
-        visiting.remove(sort_context.project_package.id);
-        visited.insert(sort_context.project_package.id);
+        visiting.remove(sort_context.project_package.name);
+        visited.insert(sort_context.project_package.name);
     }
 
     static bool hasDirtyDependency(const Project::Context& context, const Project::Package& package, const DirtyPackageRefs& references) {

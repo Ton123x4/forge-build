@@ -95,7 +95,7 @@ namespace Source {
     }
 
     auto processPackage(const Project::Context& project_context, const Project::Package& project_package, Context& context) {
-        auto fingerprint_path = getFingerprintPath(project_context.cache_path, project_package.id);
+        auto fingerprint_path = getFingerprintPath(project_context.cache_path, project_package.name);
         auto fingerprint_kv = loadFingerprintFile(fingerprint_path);
         auto package_sources = Source::Package();
 
@@ -122,7 +122,7 @@ namespace Source {
                 auto source_info = Source::SourceInfo(source_path, output_file);
                 auto path_hash = computePathHash(source_path);
 
-                source_info.current = computeSourceHash(project_context, project_package.id, source_path);
+                source_info.current = computeSourceHash(project_context, project_package.name, source_path);
 
                 if (fingerprint_kv.contains(path_hash)) {
                     source_info.previous = fingerprint_kv.at(path_hash);
@@ -132,7 +132,7 @@ namespace Source {
             }
         }
 
-        context.insert(project_package.id, package_sources);
+        context.insert(project_package.name, package_sources);
     }
 
     Context InitContext(const Project::Context& project_context) {

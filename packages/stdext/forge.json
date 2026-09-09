@@ -1,5 +1,5 @@
 {
-    "id": "stdext",
+    "name": "stdext",
     "type": "library",
     "target": {
         "windows": "lib/stdext",

@@ -25,7 +25,7 @@ namespace Project {
     };
 
     struct Dependency {
-        std::string id;
+        std::string name;
         StringArray defines;
         StringArray includes;
         StringArray libpaths;
@@ -34,8 +34,8 @@ namespace Project {
     };
 
     struct Package {
-        std::string id;
         PackageType type;
+        std::string name;
         std::string path;
         std::string output;
         StringArray flags;
