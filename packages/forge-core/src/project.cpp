@@ -229,6 +229,7 @@ namespace Project {
         auto dependency_config = Dependency();
 
         dependency_config.name = parseRequiredString(context, dependency_node, "name");
+        dependency_config.parent = parseOptionalString(context, dependency_node, "parent");
         dependency_config.defines = parseStringArray(context, dependency_node, "defines");
         dependency_config.includes = parseStringArray(context, dependency_node, "includes");
         dependency_config.libpaths = parseStringArray(context, dependency_node, "libpaths");

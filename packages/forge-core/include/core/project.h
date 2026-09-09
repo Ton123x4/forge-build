@@ -26,6 +26,7 @@ namespace Project {
 
     struct Dependency {
         std::string name;
+        std::string parent;
         StringArray defines;
         StringArray includes;
         StringArray libpaths;

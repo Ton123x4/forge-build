@@ -32,7 +32,8 @@ namespace Build {
 
         if (context.dependencies.contains(package_id)) {
             auto& dependency = context.dependencies.at(package_id);
-            auto dependency_home = Utils::GetDependencyDirectory(context, package_id);
+            auto dependency_parent = dependency.parent.empty() ? package_id : dependency.parent;
+            auto dependency_home = Utils::GetDependencyDirectory(context, dependency_parent);
 
             for (const auto& include_dir : dependency.includes) {
                 includes.insert(stdext::fs::join_path(dependency_home, include_dir));
@@ -131,7 +132,8 @@ namespace Build {
 
         if (context.dependencies.contains(package_id)) {
             auto& dependency = context.dependencies.at(package_id);
-            auto dependency_home = Utils::GetDependencyDirectory(context, package_id);
+            auto dependency_parent = dependency.parent.empty() ? package_id : dependency.parent;
+            auto dependency_home = Utils::GetDependencyDirectory(context, dependency_parent);
 
             for (const auto& libpath : dependency.libpaths) {
                 libpaths.insert(stdext::fs::join_path(dependency_home, libpath));
