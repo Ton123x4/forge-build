@@ -366,7 +366,10 @@ namespace Build {
 
         if (project_package.type == Project::PackageType::SharedLibrary) {
             command_parts.push_back("-shared");
-            command_parts.push_back(std::format("-Wl,-soname,{}", stdext::fs::filename(output_file)));
+
+            if (stdext::string::ends_with(output_file, ".so")) {
+                command_parts.push_back(std::format("-Wl,-soname,{}", stdext::fs::filename(output_file)));
+            }
         }
 
         for (const auto& flag : project_package.flags) {
