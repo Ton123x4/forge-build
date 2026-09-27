@@ -2,9 +2,17 @@
 
 Forge is a build tool for C and C++ projects. It uses a simple `forge.json` manifest to describe projects and packages, while keeping the build process straightforward and easy to customize.
 
+Forge is an experimental project created as a hobby. Although it is primarily developed for experimentation and personal use, it is currently used in some of my projects, including [Nougat](https://github.com/Ton123x4/Nougat) and [Dreiton](https://github.com/Ton123x4/Dreiton).
+
 ### Documentation
 
 The [Forge Guide](docs/guide.md) covers the project structure, `forge.json` configuration, package types, environment-specific settings, external modules, resources, versioning, and build options.
+
+### `stdext`
+
+Forge currently uses the `stdext` library internally, and some projects that depend on Forge use it as well.
+
+`stdext` is currently experimental and does not have documentation yet. Its API and implementation may evolve as the library develops.
 
 ### Building From Source
 
